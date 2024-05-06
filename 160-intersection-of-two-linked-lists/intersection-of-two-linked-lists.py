@@ -9,6 +9,9 @@ class Solution:
         listA = headA
         listB = headB
 
+        if not headA or not headB:
+            return None
+            
         while listA != listB:
             if not listA:
                 listA = headB
