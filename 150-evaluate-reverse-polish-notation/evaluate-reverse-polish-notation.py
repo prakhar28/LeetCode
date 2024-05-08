@@ -4,10 +4,10 @@ class Solution:
         operators = ["+", "-", "*", "/"]
         for i in tokens:
             if i.isnumeric() or (i[0] == "-" and i[1:].isnumeric()):
-                stack.append(i)
+                stack.append(int(i))
             else:
-                n = int(stack.pop())
-                m = int(stack.pop())
+                n = stack.pop()
+                m = stack.pop()
                 if i == "+":
                     stack.append(m + n)
                 elif i == "-":
@@ -17,4 +17,4 @@ class Solution:
                 elif i == "/":
                     stack.append(int(m / n))
         
-        return int(stack[0])
+        return stack[0]
