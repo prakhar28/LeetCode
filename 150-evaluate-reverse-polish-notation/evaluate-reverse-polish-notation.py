@@ -14,7 +14,7 @@ class Solution:
                     stack.append(m - n)
                 elif i == "*":
                     stack.append(m * n)
-                elif i == "/":
+                else:
                     stack.append(int(m / n))
         
         return stack[0]
