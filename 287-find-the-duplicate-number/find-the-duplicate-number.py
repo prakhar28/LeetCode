@@ -4,6 +4,7 @@ class Solution:
         for i in nums:
             if i in dupMap:
                 dupMap[i] += 1
+                return i
             else:
                 dupMap[i] = 1
 
