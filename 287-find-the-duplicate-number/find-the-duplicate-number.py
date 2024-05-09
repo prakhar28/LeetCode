@@ -1,13 +1,9 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        dupMap = {}
-        for i in nums:
-            if i in dupMap:
-                dupMap[i] += 1
-                return i
-            else:
-                dupMap[i] = 1
-
-        for key in dupMap:
-            if dupMap[key] > 1:
-                return key
+        for i in range(len(nums)):
+            ind = abs(nums[i])
+            if nums[ind] < 0:
+                return ind
+            nums[ind] = -nums[ind]
+        return -1
+        
