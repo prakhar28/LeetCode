@@ -13,7 +13,7 @@ class Solution:
             
             leftD = depth(node.left)
             rightD = depth(node.right)
-            self.maxD = max(self.maxD, leftD + rightD)
+            self.maxD = self.maxD if self.maxD > leftD + rightD else leftD + rightD
             return 1 + max(leftD, rightD)
         
         depth(root)
