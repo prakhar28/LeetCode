@@ -15,8 +15,7 @@ var isAnagram = function(s, t) {
         } else {
             sMap.set(s[i], 1)
         }
-    }
-    for(let i = 0; i<t.length; i++){
+
         if(tMap.has(t[i])){
             tMap.set(t[i], (tMap.get(t[i])+1))
         } else {
