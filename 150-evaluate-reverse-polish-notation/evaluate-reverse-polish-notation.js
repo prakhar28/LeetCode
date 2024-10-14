@@ -3,24 +3,29 @@
  * @return {number}
  */
 var evalRPN = function(tokens) {
-    let stack = [];
-    let ht = {
-        "+" : (a,b)=> a + b,
-        "-" : (a,b)=> a-b,
-        "*" : (a,b)=> a*b,
-        '/': (a, b) => a / b >= 0 ? Math.floor(a / b) : Math.ceil(a / b),
-     }
+    const stack = [];
+    
+    // Operator map for evaluation
+    const operators = {
+        "+": (a, b) => a + b,
+        "-": (a, b) => a - b,
+        "*": (a, b) => a * b,
+        "/": (a, b) => a / b >= 0 ? Math.floor(a / b) : Math.ceil(a / b)
+    };
 
-     for(let i=0;i<tokens.length;i++){
-        if(ht[tokens[i]]){
-            let firstVal = stack.pop()
-            let secondVal = stack.pop()
-            stack.push(ht[tokens[i]](secondVal,firstVal))
-        }else{
-            stack.push(Number(tokens[i]))
+    for (const token of tokens) {
+        // Check if the token is an operator
+        if (operators[token]) {
+            const secondVal = stack.pop();
+            const firstVal = stack.pop();
+            const result = operators[token](firstVal, secondVal);
+            stack.push(result); // Push the result back onto the stack
+        } else {
+            // Token is a number, push it onto the stack
+            stack.push(parseInt(token, 10)); // Convert string to integer
         }
-     }
-
-     return stack.pop()
+    }
+    
+    return stack.pop();
 
 };
