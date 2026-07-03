@@ -2,9 +2,9 @@ class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         p = 0
         newStr = ""
-        while p < len(word1) -1:
+        while p <= len(word1) -1:
             newStr += word1[p]
-            if p < len(word2)-1:
+            if p <= len(word2)-1:
                 newStr += word2[p]
             p += 1
         
