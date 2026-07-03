@@ -4,7 +4,7 @@
 🟢 Easy
 
 ## Submission Details
-- **Runtime:** 67 ms 
+- **Runtime:** 42 ms 
 - **Memory:** 19.3 MB 
 - **Language:** python3
 
