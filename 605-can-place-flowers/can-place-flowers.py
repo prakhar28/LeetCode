@@ -9,5 +9,6 @@ class Solution:
                 n -= 1
                 if n == 0:
                     return "true"
-            return "false"
+                
+            p+=1
         return "false"
