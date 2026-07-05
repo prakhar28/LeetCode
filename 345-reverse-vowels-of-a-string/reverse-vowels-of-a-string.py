@@ -12,10 +12,10 @@ class Solution:
                 l += 1
                 r -= 1
                 continue
-            elif s_list[l] in vow and s_list[r] not in vow:
+            elif s_list[r] not in vow:
                 r -= 1
                 continue
-            elif s_list[r] in vow and s_list[l] not in vow:
+            elif s_list[l] not in vow:
                 l += 1
                 continue
             else:
