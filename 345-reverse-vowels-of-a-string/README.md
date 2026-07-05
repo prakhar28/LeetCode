@@ -4,8 +4,8 @@
 🟢 Easy
 
 ## Submission Details
-- **Runtime:** 0 ms 
-- **Memory:** 19.3 MB 
+- **Runtime:** 23 ms (Percentile: 16.15%)
+- **Memory:** 20.6 MB (Percentile: 51.91%)
 - **Language:** python3
 
 ---
