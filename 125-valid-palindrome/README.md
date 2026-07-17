@@ -1,4 +1,17 @@
-<h2><a href="https://leetcode.com/problems/valid-palindrome">Valid Palindrome</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
+# [125. ](https://leetcode.com/problems/valid-palindrome/)
+
+## Difficulty
+🟢 Easy
+
+## Submission Details
+- **Runtime:** 0 ms 
+- **Memory:** 19.2 MB 
+- **Language:** python3
+
+---
+
+## Problem Description
+<p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
 
 <p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>
 
@@ -35,3 +48,4 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 	<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
 	<li><code>s</code> consists only of printable ASCII characters.</li>
 </ul>
+
