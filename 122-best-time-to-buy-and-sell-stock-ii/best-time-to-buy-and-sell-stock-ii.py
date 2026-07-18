@@ -7,9 +7,10 @@ class Solution:
             if prices[l] >= prices[r]:
                 l = r
             else:
-                pro = prices[r] - prices[l]
-                l += 1
-        
+                pro += prices[r] - prices[l]
+                l+= 1
+                
+                        
         return pro
 
 
