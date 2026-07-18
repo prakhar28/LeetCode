@@ -13,14 +13,15 @@ class MinStack:
 
     def pop(self) -> None:
         self.stack.pop()
+        self.currMin = self.stack[-1][1]
         
 
     def top(self) -> int:
-        self.stack[-1][0]
+        return self.stack[-1][0]
         
 
     def getMin(self) -> int:
-        self.stack[-1][1]
+        return self.stack[-1][1]
         
 
 
