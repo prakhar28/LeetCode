@@ -4,7 +4,7 @@
 🟡 Medium
 
 ## Submission Details
-- **Runtime:** 4 ms 
+- **Runtime:** 0 ms 
 - **Memory:** 19.3 MB 
 - **Language:** python3
 
