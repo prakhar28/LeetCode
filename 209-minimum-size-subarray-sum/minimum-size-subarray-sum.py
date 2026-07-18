@@ -2,17 +2,17 @@ class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         l = 0
         r = 1
-        minInd = 0
-        while l < r and r < len(nums) -1:
-            currSum = nums[l]
-            if currSum + nums[r] < target:
+        minInd = len(nums) 
+        currSum = nums[l] + nums[r]
+        while l < len(nums) and r < len(nums) -1 :
+            if currSum < target :
+                print("r, cu", r, currSum) 
                 r += 1
                 currSum += nums[r]
-                print("r, cu", r, currSum) 
-            elif currSum + nums[r] >= target:
+            else:
                 minInd = min(r - l + 1, minInd)
                 l += 1
-                print("elif", l)
+                print("elif", l, minInd, currSum)
                 currSum -= nums[l]
         return minInd
 
