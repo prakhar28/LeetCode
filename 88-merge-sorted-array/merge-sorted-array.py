@@ -8,7 +8,7 @@ class Solution:
         p = m + n -1
 
         while p1 > 0 and p2 > 0:
-            if nums1[p1] >= nums2[p2]:
+            if nums1[p1] > nums2[p2]:
                 nums1[p] = nums1[p1]
                 p1 -= 1
             else:
