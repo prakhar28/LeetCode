@@ -5,7 +5,7 @@
 
 ## Submission Details
 - **Runtime:** 0 ms 
-- **Memory:** 19.4 MB 
+- **Memory:** 19.3 MB 
 - **Language:** python3
 
 ---
