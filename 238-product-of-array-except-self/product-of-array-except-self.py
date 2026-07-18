@@ -3,7 +3,7 @@ class Solution:
         answer = [1] * len(nums)
 
         lp = 1
-        for i in range(len(nums)- 1):
+        for i in range(len(nums)):
             answer[i] = lp
             lp *= nums[i]
         
