@@ -4,13 +4,12 @@ class Solution:
 
         currStack = [0]
 
-        for i in range(1, len(temperatures)):
-            while currStack:
-                if temperatures[i] > temperatures[currStack[-1]]:
-                    popped_index = currStack.pop()
-                    daysArr[popped_index] = i - popped_index
+        for i in range(len(temperatures)):
+            while currStack and temperatures[i] > temperatures[currStack[-1]]:
+                print("curSta, i", currStack, i)
+                popped_index = currStack.pop()
+                print("popi", popped_index)
+                daysArr[popped_index] = i - popped_index
+            currStack.append(i)
 
-                else:
-                    currStack.append(i)
-                            
         return daysArr
