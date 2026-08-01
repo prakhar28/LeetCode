@@ -17,7 +17,7 @@ class Solution:
             ind1 -= 1
             ind2 -= 1
         
-        return ''.join(res[::1])
+        return ''.join(res[::-1])
 
 
 
