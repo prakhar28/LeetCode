@@ -4,8 +4,8 @@
 🟡 Medium
 
 ## Submission Details
-- **Runtime:** 0 ms 
-- **Memory:** 19.3 MB 
+- **Runtime:** 0 ms (Percentile: 100.00%)
+- **Memory:** 19.2 MB (Percentile: 67.85%)
 - **Language:** python3
 
 ---
