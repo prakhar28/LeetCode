@@ -3,8 +3,6 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        if not matrix or not matrix[0]:
-            return
         
         n = len(matrix)
         for i in range(n):
