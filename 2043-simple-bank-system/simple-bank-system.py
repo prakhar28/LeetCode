@@ -6,8 +6,8 @@ class Bank:
         
     def transfer(self, account1: int, account2: int, money: int) -> bool:
         if self.isValid(account1) and self.isValid(account2) and self.balances[account1 - 1] >= money:
-            self.balances[account1- 1] = self.balances[account1- 1] - money
-            self.balances[account2- 1] = self.balances[account2- 1] + money
+            self.balances[account1- 1] -= money
+            self.balances[account2- 1] += money
             return True
         return False
         
@@ -15,21 +15,17 @@ class Bank:
     def deposit(self, account: int, money: int) -> bool:
         if not self.isValid(account):
             return False
-        self.balances[account- 1] = self.balances[account- 1] + money
+        self.balances[account- 1] += money
         return True
 
     def withdraw(self, account: int, money: int) -> bool:
-        print("account, money", account, money)
-        print("balances", self.balances)
         if not self.isValid(account) or self.balances[account- 1] < money:
             return False
-        self.balances[account- 1] = self.balances[account- 1] - money
+        self.balances[account- 1] -= money
         return True
     
     def isValid(self, account):
-        if account - 1 < self.accounts:
-            return True
-        return False
+        return 1 <= account <= self.accounts
 
 
 # Your Bank object will be instantiated and called as such:
