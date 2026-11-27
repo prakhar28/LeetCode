@@ -1,0 +1,51 @@
+name: LeetCode problem of the day
+
+on:
+  schedule:
+    - cron: "9 3 * * *"   # shortly after the daily problem changes (00:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  potd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Decide whether to log today (~60%)
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ $((RANDOM % 5)) -lt 3 ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"; echo "Skipping today"
+          fi
+
+      - name: Random delay (spreads commit times)
+        if: steps.gate.outputs.go == 'true' && github.event_name == 'schedule'
+        run: sleep $((RANDOM % 3600))
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Log problem
+        if: steps.gate.outputs.go == 'true'
+        run: python scripts/potd.py
+
+      - name: Commit
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          git config user.name "Prakhar Jain"
+          if [ -z "${{ vars.COMMIT_EMAIL }}" ]; then echo "::error::Add a repository variable COMMIT_EMAIL (Settings > Secrets and variables > Actions > Variables)"; exit 1; fi
+          git config user.email "${{ vars.COMMIT_EMAIL }}"
+          git add -A
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "potd: log $(ls -t daily/*.md | grep -v README | head -1 | xargs basename .md)"
+          git pull --rebase
+          git push
